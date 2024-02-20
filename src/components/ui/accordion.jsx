@@ -16,22 +16,22 @@ const AccordionTrigger = React.forwardRef(({ className, children, extraText, ...
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        "flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180 [data-state=open] > svg:rotate-180 ",
+        "md:flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180 [data-state=open] > svg:rotate-180 ",
         className
       )}
       {...props}>
       <div className=" flex items-center ">
-        <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 mr-5" />
+        <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 mr-3" />
         {children}
       </div>
-      <div className=" flex items-center space-x-3">
+      <div className=" flex items-center space-x-3 px-1 py-2">
         <div className=" flex items-center">
-          <PlayCircle className="w-5 h-5 mr-2 text-[#34197c]" />
-          <p className="text-sm font-medium">{extraText.lectures} lectures</p>
+          <PlayCircle className="w-4 h-4 mr-2 text-[#34197c]" />
+          <p className="md:text-sm text-xs whitespace-nowrap font-medium">{extraText.lectures} lectures</p>
         </div>
         <div className=" flex items-center">
-          <Clock10 className="w-5 h-5 mr-2 text-orange-500" />
-          <p className="text-sm font-medium">{extraText.duration}</p>
+          <Clock10 className="w-4 h-4 mr-2 text-orange-500" />
+          <p className="md:text-sm text-xs whitespace-nowrap  font-medium">{extraText.duration}</p>
         </div>
       </div>
       {/* <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 mr-5" />

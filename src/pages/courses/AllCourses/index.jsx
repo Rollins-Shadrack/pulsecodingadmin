@@ -32,21 +32,21 @@ const index = () => {
   }
   return (
     <div className="pb-5">
-      <div className="flex items-center justify-between mb-4">
+      <div className="md:flex items-center justify-between mb-4">
         <h4 className="text-2xl font-medium text-gray-700 mb-3">All Courses</h4>
 
-        <Input className="w-1/5" placeholder={`Search `}/>
+        <Input className="md:w-1/5" placeholder={`Search `}/>
       </div>
       <div className="w-full">
         {currentCourses.map((course, idx) => (
           <Card className="shadow-lg mb-5 text-gray-700 " key={idx}>
             <CardHeader>
-              <div className="grid grid-cols-3 items-center gap-4">
-                <div className=" col-span-2 ">
+              <div className="grid md:grid-cols-3 items-center gap-4">
+                <div className=" md:col-span-2 ">
                   <CardTitle className="text-xl mb-3">{course.title}</CardTitle>
-                  <CardDescription className="">{course.desc}</CardDescription>
+                  <CardDescription className="text-justify">{course.desc}</CardDescription>
                 </div>
-                <div className="mx-auto  w-4/5 ">
+                <div className="mx-auto  md:w-4/5 w-full ">
                   <div className="flex justify-between items-center w-4/5 mb-8">
                     <div className="inline-flex items-center">
                       <PlayCircle className="mr-3 w-4 h-4" />

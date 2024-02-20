@@ -17,7 +17,7 @@ const Charts = () => {
         <ResponsiveContainer width="100%" height={400}>
           <ComposedChart width="100%" height={400} data={randomData}>
             <XAxis dataKey="name" />
-            <YAxis />
+            <YAxis width={30} />
             <Tooltip />
             <Legend />
             <CartesianGrid stroke="#c3bcbc" />

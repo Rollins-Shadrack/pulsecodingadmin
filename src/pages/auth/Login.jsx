@@ -29,13 +29,13 @@ const Login = () => {
   }
   return (
     <div className="pt-10 main-container">
-      <Container className="py-10">
+      <Container className="md:py-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          <div className="md:col-span-2 w-full">
-            <img src={loginImage} alt="pulsecoding.com" className=" mx-auto object-cover" />
+          <div className="md:col-span-2 w-full md:block hidden">
+            <img src={loginImage} alt="pulsecoding.com" className="mx-auto object-cover" />
           </div>
           <div className="">
-            <div className="flex flex-col items-center justify-center">
+            <div className="flex flex-col items-center justify-center mb-4">
               <img src={logo} alt="pulsecoding" className="w-40 h-20" />
               <p className="text-base font-medium">Login into your account</p>
             </div>

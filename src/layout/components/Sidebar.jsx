@@ -1,13 +1,11 @@
 import React from 'react'
 import logo from '@/assets/logo.png'
 import { menu } from '@/constants/sidebar';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
-    const location = useLocation();
-    const pathname = location.pathname
   return (
-    <div className="flex flex-col fixed gap-6 h-full bg-black text-white w-20 lg:w-64">
+    <div className="flex flex-col fixed gap-6 h-full bg-black text-white w-16 lg:w-64">
       <div className="px-4 mt-10">
         <img src={logo} alt="pulsecoding.com" className="w-40" />
 

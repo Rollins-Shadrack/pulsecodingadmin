@@ -10,7 +10,7 @@ const DashboardLayout = () => {
       <div className="">
         <Sidebar />
       </div>
-      <div className="flex flex-col lg:ml-64 w-full ">
+      <div className="flex flex-col ml-16 lg:ml-64 w-full ">
         <Header />
         <Container className="main-container">
           <Outlet />

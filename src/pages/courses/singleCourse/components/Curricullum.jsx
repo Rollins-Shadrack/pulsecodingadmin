@@ -9,20 +9,20 @@ const Curricullum = () => {
     <div className="py-5">
       <p className="text-base text-justify">{singleCourse.curriculum.desc}</p>
       <div className="lg:w-4/5 py-5">
-        <div className="flex items-center justify-between my-2">
-          <h4 className="font-medium text-lg">{singleCourse.curriculum.title}</h4>
+        <div className="md:flex items-center justify-between my-2">
+          <h4 className="font-medium text-lg mb-3">{singleCourse.curriculum.title}</h4>
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-2">
-              <FolderOpen className="h-5 w-5 text-orange-500" />
-              <p className="text-base font-medium">{singleCourse.curriculum.features.sections} Sections</p>
+              <FolderOpen className="h-4 w-4 text-orange-500" />
+              <p className="md:text-base text-xs whitespace-nowrap font-medium">{singleCourse.curriculum.features.sections} Sections</p>
             </div>
             <div className="flex items-center space-x-2">
-              <PlayCircle className="h-5 w-5 text-[#34197c]" />
-              <p className="text-base font-medium">{singleCourse.curriculum.features.lectures} lectures</p>
+              <PlayCircle className="h-4 w-4 text-[#34197c]" />
+              <p className="md:text-base text-xs whitespace-nowrap font-medium">{singleCourse.curriculum.features.lectures} lectures</p>
             </div>
             <div className="flex items-center space-x-2">
-              <Clock10 className="h-5 w-5 text-orange-500" />
-              <p className="text-base font-medium">{singleCourse.curriculum.features.duration} </p>
+              <Clock10 className="h-4 w-4 text-orange-500" />
+              <p className="md:text-base text-xs whitespace-nowrap font-medium">{singleCourse.curriculum.features.duration} </p>
             </div>
           </div>
         </div>

@@ -41,10 +41,10 @@ const index = () => {
     <div>
       <Card className="shadow-lg text-gray-700">
         <CardHeader>
-          <div className="flex justify-between items-center">
-            <CardTitle className="text-xl">{singleCourse.title}</CardTitle>
+          <div className="md:flex justify-between items-center">
+            <CardTitle className="md:text-xl text-lg mb-3">{singleCourse.title}</CardTitle>
             <Button
-              className={`${enroll ? "bg-green-600 hover:bg-green-600" : "bg-black hover:bg-black"} text-white   uppercase px-10`}
+              className={`${enroll ? "bg-green-600 hover:bg-green-600" : "bg-black hover:bg-black"} text-white   uppercase md:px-10 w-full md:w-fit `}
               onClick={handleEnrollChange}>
               {enroll ? "In Progress " : " Enroll Course"}
             </Button>
@@ -61,7 +61,7 @@ const index = () => {
             </div>
           </div>
           <div className="md:flex w-full items-start justify-center lg:space-x-14 ">
-            <div className="sticky top-28  md:w-2/12 rounded-lg p-4 shadow-sm border">
+            <div className="top-28  md:w-2/12 rounded-lg p-4 shadow-sm border mb-5">
               {Object.keys(singleCourse.courseDetails).map((lesson, idx) => (
                 <h1
                   key={idx}
@@ -73,7 +73,7 @@ const index = () => {
             </div>
             <div className="md:w-10/12 w-full grid grid-cols-1 lg:grid-cols-2 gap-5">
               <div dangerouslySetInnerHTML={{ __html: selectedLessonContent.text }} />
-              <div className="relative">
+              <div className="relative h-80">
                 <div className="absolute inset-0 h-full">
                   <img src={selectedLessonContent.img} alt="pulsecoding.com" className="h-full w-full object-cover rounded-lg" />
                 </div>
