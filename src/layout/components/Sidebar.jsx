@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '@/assets/logo.png'
+import logo from '@/assets/logowhite.png'
 import { menu } from '@/constants/sidebar';
 import { Link } from 'react-router-dom';
 
