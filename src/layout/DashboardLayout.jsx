@@ -6,13 +6,13 @@ import Container from '@/components/Container'
 
 const DashboardLayout = () => {
   return (
-    <div className="flex w-full main-container">
+    <div className="flex w-full  bg-gray-100">
       <div className="">
         <Sidebar />
       </div>
       <div className="flex flex-col ml-16 lg:ml-64 w-full ">
         <Header />
-        <Container className="main-container">
+        <Container >
           <Outlet />
         </Container>
       </div>
