@@ -1,7 +1,7 @@
-import { Button } from '@/components/ui/button';
-import { Card, CardHeader, CardTitle } from '@/components/ui/card';
-import { singleCourse } from '@/constants/courses';
-import React from 'react'
+import { Button } from "@/components/ui/button";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import { singleCourse } from "@/constants/courses";
+import React from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 
 const Layout = () => {
@@ -10,7 +10,7 @@ const Layout = () => {
   return (
     <div>
       <Card className="shadow-lg text-gray-700">
-        <CardHeader>
+        <CardHeader className="py-4">
           <div className="md:flex justify-between items-center">
             <CardTitle className="md:text-xl text-lg mb-3">{singleCourse.title}</CardTitle>
             <Link to={`${isEnrolled ? "" : "enrolled"}`}>
@@ -28,6 +28,6 @@ const Layout = () => {
       <Outlet />
     </div>
   );
-}
+};
 
-export default Layout
+export default Layout;
