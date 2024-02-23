@@ -3,8 +3,10 @@ import MainLayout from "./layout/MainLayout";
 import DashboardLayout from "./layout/DashboardLayout";
 import Dashboard from "@/pages/dashboard";
 import Courses from "@/pages/courses";
-import AllCourses from "@/pages/courses/AllCourses"
-import SingleCourse from "@/pages/courses/singleCourse"
+import AllCourses from "@/pages/courses/AllCourses";
+import SingleCourse from "@/pages/courses/singleCourse";
+import SingleCourseLayout from "@/pages/courses/singleCourse/Layout";
+import EnrolledCourse from "./pages/courses/singleCourse/EnrolledCourse";
 import Assessments from "@/pages/assessments";
 import Challenges from "@/pages/challenges";
 import Certification from "@/pages/certification";
@@ -13,9 +15,7 @@ import Settings from "@/pages/settings";
 import Register from "./pages/auth/Register";
 import Login from "./pages/auth/Login";
 
-
 function App() {
-
   return (
     <BrowserRouter>
       <Routes>
@@ -26,7 +26,10 @@ function App() {
             <Route path="courses">
               <Route index element={<Courses />} />
               <Route path="all" element={<AllCourses />} />
-              <Route path=":id" element={<SingleCourse />} />
+              <Route path=":id" element={<SingleCourseLayout />}>
+                <Route index element={<SingleCourse />} />
+                <Route path="enrolled" element={<EnrolledCourse/>}/>
+              </Route>
             </Route>
             <Route path="assessments" element={<Assessments />} />
             <Route path="challenges" element={<Challenges />} />
@@ -37,11 +40,11 @@ function App() {
 
           {/* public routes */}
           <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login/>}/>
+          <Route path="/login" element={<Login />} />
         </Route>
       </Routes>
     </BrowserRouter>
   );
 }
 
-export default App
+export default App;

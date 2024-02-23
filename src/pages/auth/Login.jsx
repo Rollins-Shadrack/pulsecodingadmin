@@ -10,9 +10,8 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { recaptchaSiteKey } from "@/constants/globalConstants";
 import { loginSchema } from "@/lib/validations/login";
 import { Link } from "react-router-dom";
-import loginImage from '@/assets/login.jpg'
 import { LockKeyhole, Mail } from "lucide-react";
-
+import loginImage2 from '@/assets/bg.png'
 const Login = () => {
   const form = useForm({
     resolver: yupResolver(loginSchema),
@@ -28,83 +27,83 @@ const Login = () => {
     console.log(values);
   }
   return (
-    <div className="pt-10 main-container">
-      <Container className="md:py-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          <div className="md:col-span-2 w-full md:block hidden">
-            <img src={loginImage} alt="pulsecoding.com" className="mx-auto object-cover" />
-          </div>
-          <div className="">
-            <div className="flex flex-col items-center justify-center mb-4">
-              <img src={logo} alt="pulsecoding" className="w-40 h-20" />
-              <p className="text-base font-medium">Login into your account</p>
-            </div>
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem className="relative">
-                      <FormLabel>Email Id:</FormLabel>
-                      <FormControl>
-                        <Input className="bg-gray-200" placeholder="info@xyz.com" {...field} />
-                      </FormControl>
-                      <div className="absolute top-6 right-0 bg-brandPrimary p-2.5 rounded-lg">
-                        <Mail className="text-white h-5 w-5" />
-                      </div>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="password"
-                  render={({ field }) => (
-                    <FormItem className="relative">
-                      <FormLabel>Password:</FormLabel>
-                      <FormControl className="relative">
-                        <Input className="bg-gray-200" placeholder="***********" {...field} />
-                      </FormControl>
-                      <div className="absolute top-6 right-0 bg-brandPrimary p-2.5 rounded-lg">
-                        <LockKeyhole className="text-white h-5 w-5" />
-                      </div>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <Link to="" className="flex justify-end text-brandPrimary text-base underline">
-                  Forgot Password?
-                </Link>
-
-                <FormField
-                  control={form.control}
-                  name="capVal"
-                  render={({ field }) => (
-                    <FormItem>
-                      <ReCAPTCHA {...field} sitekey={recaptchaSiteKey} size="normal" />
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <Button type="submit" className="bg-black text-white uppercase  hover:bg-black hover:text-white w-full">
-                  Login
-                </Button>
-              </form>
-            </Form>
-            <div className="border my-10 relative">
-              <div className="flex items-center justify-center absolute inset-0">
-                <div className="h-10 w-10 flex items-center justify-center bg-white rounded-full shadow-lg font-semibold">OR</div>
-              </div>
-            </div>
-            <Link to="/register">
-              <Button variant="outline" className=" w-full text-brandPrimary border-2 font-bold tracking-wider">
-                Signup now
-              </Button>
+    <div className=" main-container grid grid-cols-1 lg:grid-cols-2 h-full">
+      <Container className="flex items-center flex-col px-4 py-7 bg-white sm:px-6 lg:px-8 sm:py-16 lg:py-24 overflow-hidden w-full">
+        <div className=" mb-10 lg:w-3/5">
+          <Link to="/">
+            <img src={logo} alt="pulsecoding" className="w-40 h-20" />
+          </Link>
+          <p className="text-2xl font-bold leading-tight text-black mt-6">Login into your account</p>
+          <p class="mt-3 text-base text-gray-700">
+            Don't have an account ?{" "}
+            <Link
+              to="/register"
+              className="font-medium text-brandPrimary transition-all duration-200 hover:text-brandPrimary focus:text-brandPrimary hover:underline">
+              Sign up
             </Link>
-          </div>
+          </p>
         </div>
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 lg:w-3/5">
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem className="relative">
+                  <FormLabel>Email Id:</FormLabel>
+                  <FormControl>
+                    <Input className="bg-gray-200" placeholder="info@xyz.com" {...field} />
+                  </FormControl>
+                  <div className="absolute top-6 right-0 bg-brandPrimary p-2.5 rounded-lg">
+                    <Mail className="text-white h-5 w-5" />
+                  </div>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="password"
+              render={({ field }) => (
+                <FormItem className="relative">
+                  <FormLabel>Password:</FormLabel>
+                  <FormControl className="relative">
+                    <Input className="bg-gray-200" placeholder="***********" {...field} />
+                  </FormControl>
+                  <div className="absolute top-6 right-0 bg-brandPrimary p-2.5 rounded-lg">
+                    <LockKeyhole className="text-white h-5 w-5" />
+                  </div>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <Link to="" className="flex justify-end text-brandPrimary text-base underline">
+              Forgot Password?
+            </Link>
+
+            <FormField
+              control={form.control}
+              name="capVal"
+              render={({ field }) => (
+                <FormItem>
+                  <ReCAPTCHA {...field} sitekey={recaptchaSiteKey} size="normal" />
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <Button
+              type="submit"
+              className="inline-flex items-center justify-center  px-4 py-4 text-base font-semibold text-white transition-all duration-200 border border-transparent rounded-md bg-gradient-to-r from-brandPrimary to-purple-400 focus:outline-none hover:opacity-80 focus:opacity-80 w-full">
+              Login
+            </Button>
+          </form>
+        </Form>
       </Container>
+      <div
+        className="relative flex items-end px-4 pb-10 pt-60 sm:pb-16 md:justify-center lg:pb-24 bg-cover bg-center sm:px-6  lg:px-8"
+        style={{ backgroundImage: `url(${loginImage2})` }}>
+        <div className="absolute inset-0 bg-gradient-to-t from-brandPrimary to-transparent"></div>
+      </div>
     </div>
   );
 };
