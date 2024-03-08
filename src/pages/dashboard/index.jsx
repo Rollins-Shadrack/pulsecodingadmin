@@ -1,13 +1,14 @@
 import React from 'react'
 import StatsCards from './components/StatsCards'
-import Charts from './components/Charts';
+
+import Barchart from './components/Barchart';
 
 const index = () => {
   return (
     <div className="">
       <StatsCards />
-      <div className="my-4">
-        <Charts />
+      <div className="my-4 mt-10">
+        <Barchart/>
       </div>
     </div>
   );

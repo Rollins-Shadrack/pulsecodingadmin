@@ -1,16 +1,17 @@
-import React from 'react'
+import React from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { singleCourse } from '@/constants/courses';
-import { Clock10, File, FolderOpen, Play, PlayCircle } from 'lucide-react';
-import { Card } from '@/components/ui/card';
+import { singleCourse } from "@/constants/courses";
+import { Clock10, File, FolderOpen, Play, PlayCircle } from "lucide-react";
+import { Card, CardDescription, CardHeader } from "@/components/ui/card";
 
 const Curricullum = () => {
   return (
     <div className="py-5">
-      <p className="text-base text-justify">{singleCourse.curriculum.desc}</p>
-      <div className="lg:w-4/5 py-5">
+      <CardDescription>{singleCourse.curriculum.desc}</CardDescription>
+
+      <div className="lg:w-4/5 py-3">
         <div className="md:flex items-center justify-between my-2">
-          <h4 className="font-medium text-lg mb-3">{singleCourse.curriculum.title}</h4>
+          <h4 className="font-medium text-lg mb-3 text-wrap my-7">{singleCourse.curriculum.title}</h4>
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-2">
               <FolderOpen className="h-4 w-4 text-orange-500" />
@@ -49,6 +50,6 @@ const Curricullum = () => {
       </div>
     </div>
   );
-}
+};
 
-export default Curricullum
+export default Curricullum;

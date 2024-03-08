@@ -57,7 +57,7 @@ const index = () => {
                       <p className="font-medium text-sm">{course.duration} </p>
                     </div>
                   </div>
-                  <Link to={`/courses/${5}`}>
+                  <Link to={`/dashboard/courses/${5}`}>
                     <Button className="bg-black uppercase text-white hover:border hover:text-black w-full">Read More</Button>
                   </Link>
                 </div>

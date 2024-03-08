@@ -6,7 +6,7 @@ import Container from '@/components/Container'
 
 const DashboardLayout = () => {
   return (
-    <div className="flex w-full  bg-gray-100">
+    <div className="flex w-full  ">
       <div className="">
         <Sidebar />
       </div>

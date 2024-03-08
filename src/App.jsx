@@ -14,6 +14,10 @@ import Project from "@/pages/project";
 import Settings from "@/pages/settings";
 import Register from "./pages/auth/Register";
 import Login from "./pages/auth/Login";
+import Instructor from "./pages/instructors"
+import NewInstructor from "./pages/instructors/new"
+import Students from "./pages/students"
+import NewStudent from "./pages/students/new"
 
 function App() {
   return (
@@ -21,15 +25,23 @@ function App() {
       <Routes>
         <Route element={<MainLayout />}>
           {/* private routes */}
-          <Route path="/" element={<DashboardLayout />}>
+          <Route path="/dashboard" element={<DashboardLayout />}>
             <Route index element={<Dashboard />} />
             <Route path="courses">
               <Route index element={<Courses />} />
               <Route path="all" element={<AllCourses />} />
               <Route path=":id" element={<SingleCourseLayout />}>
                 <Route index element={<SingleCourse />} />
-                <Route path="enrolled" element={<EnrolledCourse/>}/>
+                <Route path="enrolled" element={<EnrolledCourse />} />
               </Route>
+            </Route>
+            <Route path="instructors">
+              <Route index element={<Instructor />} />
+              <Route path="new" element={<NewInstructor />} />
+            </Route>
+            <Route path="students">
+              <Route index element={<Students />} />
+              <Route path="new" element={<NewStudent />} />
             </Route>
             <Route path="assessments" element={<Assessments />} />
             <Route path="challenges" element={<Challenges />} />
@@ -40,7 +52,7 @@ function App() {
 
           {/* public routes */}
           <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Login />} />
         </Route>
       </Routes>
     </BrowserRouter>
