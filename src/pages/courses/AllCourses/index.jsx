@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { allCourses } from "@/constants/courses";
-import { Clock10, PlayCircle } from "lucide-react";
+import { BookCheck, BookPlus, Clock10, PlayCircle } from "lucide-react";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
@@ -25,18 +25,28 @@ const index = () => {
 
   const totalPages = Math.ceil(allCourses.length / itemsPerPage);
 
-  console.log(totalPages)
-
   const handlePageChange = (page) => {
     setCurrentPage(page)
   }
   return (
     <div className="pb-5">
-      <div className="md:flex items-center justify-between mb-4">
-        <h4 className="text-2xl font-medium text-gray-700 mb-3">All Courses</h4>
-
-        <Input className="md:w-1/5" placeholder={`Search `}/>
-      </div>
+      <Card className="mb-5 shadow">
+        <CardHeader className="py-3 ">
+          <div className="md:flex items-center justify-between">
+            <CardTitle className="md:text-2xl text-lg mb-3 my-auto flex items-center">
+              All Courses <BookCheck className="w-5 h-5 ml-2" />
+            </CardTitle>
+            <div className="w-full md:w-1/2 flex justify-end items-center space-x-4 ">
+              <Input className="md:w-4/5" placeholder={`Search `} />
+              <Link to="/dashboard/courses/new">
+                <Button className="bg-green-600 hover:bg-green-600 flex items-center">
+                  New <BookPlus className="w-4 h-4 ml-2" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </CardHeader>
+      </Card>
       <div className="w-full">
         {currentCourses.map((course, idx) => (
           <Card className="shadow-lg mb-5 text-gray-700 " key={idx}>
@@ -57,7 +67,7 @@ const index = () => {
                       <p className="font-medium text-sm">{course.duration} </p>
                     </div>
                   </div>
-                  <Link to={`/dashboard/courses/${5}`}>
+                  <Link to={`/dashboard/courses/module`}>
                     <Button className="bg-black uppercase text-white hover:border hover:text-black w-full">Read More</Button>
                   </Link>
                 </div>

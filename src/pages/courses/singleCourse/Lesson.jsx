@@ -3,12 +3,12 @@ import { Resize, ResizeHorizon } from "react-resize-layout";
 import CodeEditor from "./components/CodeEditor";
 import videoImage from "@/assets/course.jpg";
 import { Play } from "lucide-react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./components/featured-accordion";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../components/featured-accordion";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { Card, CardHeader } from "@/components/ui/card";
 
-const EnrolledCourse = () => {
+const Lesson = () => {
   
 const customStyles = {
   path: {
@@ -81,4 +81,4 @@ const customStyles = {
   );
 };
 
-export default EnrolledCourse;
+export default Lesson;

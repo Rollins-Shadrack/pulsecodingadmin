@@ -6,7 +6,9 @@ import Courses from "@/pages/courses";
 import AllCourses from "@/pages/courses/AllCourses";
 import SingleCourse from "@/pages/courses/singleCourse";
 import SingleCourseLayout from "@/pages/courses/singleCourse/Layout";
-import EnrolledCourse from "./pages/courses/singleCourse/EnrolledCourse";
+import SingleCourseLesson from "./pages/courses/singleCourse/Lesson";
+import SingleCourseChapters from "./pages/courses/singleCourse/Chapters";
+import NewCourse from "./pages/courses/NewCourse"
 import Assessments from "@/pages/assessments";
 import Challenges from "@/pages/challenges";
 import Certification from "@/pages/certification";
@@ -30,9 +32,13 @@ function App() {
             <Route path="courses">
               <Route index element={<Courses />} />
               <Route path="all" element={<AllCourses />} />
+              <Route path="new" element={<NewCourse />} />
               <Route path=":id" element={<SingleCourseLayout />}>
                 <Route index element={<SingleCourse />} />
-                <Route path="enrolled" element={<EnrolledCourse />} />
+                <Route path=":id">
+                  <Route index element={<SingleCourseChapters />} />
+                  <Route path=":id" element={<SingleCourseLesson />} />
+                </Route>
               </Route>
             </Route>
             <Route path="instructors">

@@ -1,4 +1,4 @@
-import { BarChart, BookCheck, BookOpenCheck, FilePlus2, Folders, GraduationCap, Home,  Layers, SquarePen, Star, UserCog2, UserPlus, Users, UsersRound } from "lucide-react";
+import { BarChart, BookCheck, BookOpenCheck, BookPlus, FilePlus2, Folders, GraduationCap, Home,  Layers, SquarePen, Star, UserCog2, UserPlus, Users, UsersRound } from "lucide-react";
 
 export const menu = [
   { name: "Dashboard", link: "/dashboard", icon: Home },
@@ -9,6 +9,7 @@ export const menu = [
     submenu: [
       { name: "All Courses", link: "courses/all", icon: BookCheck },
       { name: "My Courses", link: "courses", icon: BookOpenCheck },
+      { name: "Add Course", link: "courses/new", icon: BookPlus },
     ],
   },
   {

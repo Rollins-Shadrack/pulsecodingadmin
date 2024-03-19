@@ -22,7 +22,7 @@ const CoursesCards = () => {
               <p className="font-medium text-xs">4/20 Lessons</p>
             </div>
           </CardHeader>
-          <Link to="5" className="absolute top-1 right-1 text-xs flex items-center p-1 px-2  text-black rounded-md font-medium underline">
+          <Link to="Module" className="absolute top-1 right-1 text-xs flex items-center p-1 px-2  text-black rounded-md font-medium underline">
             <PlayCircle className="mr-2 w-4 h-4" />
             <p className="">Continue</p>
           </Link>
