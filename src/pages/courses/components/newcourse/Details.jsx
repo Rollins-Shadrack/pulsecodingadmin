@@ -1,10 +1,11 @@
-import React from 'react'
+import React from "react";
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import TextEditor from "@/components/TextEditor";
 
-const Details = ({form}) => {
+const Details = ({ form }) => {
+
+
   return (
     <div>
       <div className="grid grid-cols-1 md:grid-cols-2  gap-10 mb-3">
@@ -43,14 +44,7 @@ const Details = ({form}) => {
           <FormItem>
             <FormLabel>Course Description</FormLabel>
             <FormControl className="mb-10">
-                <CKEditor
-                  editor={ClassicEditor}
-                  data={field.value}
-                  onChange={(event, editor) => {
-                    const data = editor.getData();
-                    field.onChange(data);
-                  }}
-                />
+              <TextEditor field={ field } />
             </FormControl>
             <FormMessage />
           </FormItem>
@@ -58,6 +52,6 @@ const Details = ({form}) => {
       />
     </div>
   );
-}
+};
 
-export default Details
+export default Details;

@@ -2,6 +2,7 @@ import React from 'react'
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import TextEditor from '@/components/TextEditor';
 
 const Requirements = ({form}) => {
   return (
@@ -22,12 +23,12 @@ const Requirements = ({form}) => {
 
       <FormField
         control={form.control}
-        name="CourseDesc"
+        name="CourseRequirements"
         render={({ field }) => (
           <FormItem>
             <FormLabel>Course Requirements</FormLabel>
             <FormControl>
-              <Textarea placeholder="Required Skills/Background Knowledge/Recommended Software/Tools" className="resize-none" {...field} />
+              <TextEditor field={field} />
             </FormControl>
             <FormMessage />
           </FormItem>

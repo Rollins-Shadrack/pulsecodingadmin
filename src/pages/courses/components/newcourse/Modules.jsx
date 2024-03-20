@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import TextEditor from "@/components/TextEditor";
 
 const NewCourseModule = ({form}) => {
       const [modules, setModules] = useState([{ moduleName: "", chapters: [{ chapterName: "", chapterDesc: "", chapterVideo: "" }] }]);
@@ -69,14 +69,7 @@ const NewCourseModule = ({form}) => {
                 <FormItem>
                   <FormLabel>Module Description</FormLabel>
                   <FormControl>
-                    <CKEditor
-                      editor={ClassicEditor}
-                      data={field.value}
-                      onChange={(event, editor) => {
-                        const data = editor.getData();
-                        field.onChange(data);
-                      }}
-                    />
+                    <TextEditor field={field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -123,14 +116,7 @@ const NewCourseModule = ({form}) => {
                   <FormItem>
                     <FormLabel>Chapter Description</FormLabel>
                     <FormControl>
-                      <CKEditor
-                        editor={ClassicEditor}
-                        data={field.value}
-                        onChange={(event, editor) => {
-                          const data = editor.getData();
-                          field.onChange(data);
-                        }}
-                      />
+                      <TextEditor field={field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>

@@ -40,7 +40,7 @@ const NewCourse = () => {
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
               <Accordion type="single" collapsible className="w-full" defaultValue="item-1">
                 <AccordionItem value="item-1" defaultOpen>
-                  <AccordionTrigger className="text-brandPrimary">Course Details</AccordionTrigger>
+                  <AccordionTrigger className="text-brandPrimary">Course Name</AccordionTrigger>
                   <AccordionContent className="mx-4">
                     <Details form={form} />
                   </AccordionContent>
