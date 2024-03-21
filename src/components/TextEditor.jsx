@@ -1,7 +1,6 @@
-import React from 'react'
+import React from "react";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-
 
 const TextEditor = ({ field }) => {
   function uploadAdapter(loader) {
@@ -35,6 +34,7 @@ const TextEditor = ({ field }) => {
       return uploadAdapter(loader);
     };
   }
+
   return (
     <CKEditor
       editor={ClassicEditor}
@@ -44,7 +44,8 @@ const TextEditor = ({ field }) => {
         field.onChange(data);
       }}
       onReady={(editor) => {
-        console.log("Editor1 is ready to use!", editor);
+        const data = editor.getData();
+        console.log("Editor is ready to use!", data);
       }}
       config={{
         extraPlugins: [uploadPlugin],
@@ -53,4 +54,4 @@ const TextEditor = ({ field }) => {
   );
 };
 
-export default TextEditor
+export default TextEditor;
